@@ -1,5 +1,10 @@
 <?php
 
+add_theme_support( 'post-thumbnails' );
+
+add_theme_support( 'title-tag' );
+
+
 /**
  * Function takes care of handling assets with enqueue
  * @return void

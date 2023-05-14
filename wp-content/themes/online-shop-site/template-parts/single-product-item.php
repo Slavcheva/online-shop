@@ -17,9 +17,21 @@
 
                     <div class="product-details product-details-tags">
                         <div class="product-details-label">Tags</div>
-                        <span>Laundry</span>
-                        <span>Washing</span>
+	                    <?php
+	                    $tags_str = shop_display_single_tag( get_the_ID());
+
+	                    $tags     = ( explode( ',', $tags_str ) );
+
+	                    if ( ! empty( $tags_str ) ): ?>
+                            <ul>
+			                    <?php foreach ( $tags as $tag ): ?>
+
+                                    <span><?php echo( $tag ) ?> </span>
+			                    <?php endforeach; ?>
+                            </ul>
+	                    <?php endif; ?>
                     </div>
+
                 </header>
 
                 <div class="product-body">
@@ -31,15 +43,19 @@
     <aside class="product-secondary">
         <div class="product-logo">
             <div class="product-logo-box">
-			    <?php if ( has_post_thumbnail() ): ?>
-				    <?php the_post_thumbnail(); ?>
-			    <?php else : ?>
-                    <img src="<?php echo home_url(); ?>/wp-content/themes/online-shop-site/assets/images/washing-machine.jpg"
+				<?php if ( has_post_thumbnail() ): ?>
+					<?php the_post_thumbnail(); ?>
+				<?php else : ?>
+                    <img src="<?php echo home_url(); ?>/wp-content/themes/online-shop-site/assets/images/default-img.png"
                          alt="default image">
-			    <?php endif; ?>
+				<?php endif; ?>
             </div>
         </div>
-        <a href="#" class="button button-wide">Buy now</a>
+        <a id="<?php echo get_the_ID() ?>" href="#" class="button button-wide upvote-button">Upvote</a>
+        <div class="product-visits">Visits of the
+            product: <?php echo get_post_meta( get_the_ID(), 'views_count', true ); ?></div>
+        <div class="product-visits">Product Upvotes: <?php echo get_post_meta( get_the_ID(), 'upvotes', true ); ?></div>
+
     </aside>
 </div>
 

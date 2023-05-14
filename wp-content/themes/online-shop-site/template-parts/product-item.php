@@ -16,7 +16,7 @@
 	        <?php if ( has_post_thumbnail() ): ?>
 		        <?php the_post_thumbnail(); ?>
 	        <?php else : ?>
-            <img src="<?php echo home_url(); ?>/wp-content/themes/online-shop-site/assets/images/washing-machine.jpg"
+            <img src="<?php echo home_url(); ?>/wp-content/themes/online-shop-site/assets/images/default-img.png"
                      alt="default image">
 	        <?php endif; ?>
         </div>

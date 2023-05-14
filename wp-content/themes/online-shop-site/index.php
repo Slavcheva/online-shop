@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<h1 class="site-title">Our blog</h1>
 <ul class="posts-listing">
 	<?php if ( have_posts() ): ?>
 

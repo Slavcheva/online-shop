@@ -558,6 +558,10 @@ a {
 .meta-author{
   margin-right: 5em;
 }
+
+.product-visits{
+  color: #555555;
+}
 @media (max-width: 960px) {
   .product-single {
     flex-direction: column;

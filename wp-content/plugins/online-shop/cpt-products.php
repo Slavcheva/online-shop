@@ -76,7 +76,6 @@ function shop_code_taxonomy() {
 add_action( 'init', 'shop_code_taxonomy' );
 
 
-
 /**
  * Register a 'price' taxonomy for post type 'product', with a rewrite to match product CPT slug.
  *
@@ -209,3 +208,36 @@ function shop_model_taxonomy() {
 }
 
 add_action( 'init', 'shop_model_taxonomy' );
+
+/**
+ * Register a 'tag' taxonomy for post type 'product', with a rewrite to match product CPT slug.
+ *
+ * @see register_post_type for registering post types.
+ */
+function shop_tag_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Tags', 'taxonomy general name', 'shop' ),
+		'singular_name'     => _x( 'Tag', 'taxonomy singular name', 'shop' ),
+		'search_items'      => __( 'Search Tags', 'shop' ),
+		'all_items'         => __( 'All Tags', 'shop' ),
+		'parent_item'       => __( 'Parent Tag', 'shop' ),
+		'parent_item_colon' => __( 'Parent Tag:', 'shop' ),
+		'edit_item'         => __( 'Edit Tag', 'shop' ),
+		'update_item'       => __( 'Update Tag', 'shop' ),
+		'add_new_item'      => __( 'Add New Tag', 'shop' ),
+		'new_item_name'     => __( 'New Tag Name', 'shop' ),
+		'menu_name'         => __( 'Tag', 'shop' ),
+	);
+	$args   = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'tag', 'product', $args );
+}
+
+add_action( 'init', 'shop_tag_taxonomy' );
