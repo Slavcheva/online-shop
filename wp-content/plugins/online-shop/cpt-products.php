@@ -41,3 +41,168 @@ function shop_products_cpt() {
 
 add_action( 'init', 'shop_products_cpt' );
 
+
+/**
+ * Register a 'code' taxonomy for post type 'product', with a rewrite to match product CPT slug.
+ *
+ * @see register_post_type for registering post types.
+ */
+function product_code_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Codes', 'taxonomy general name', 'shop' ),
+		'singular_name'     => _x( 'Code', 'taxonomy singular name', 'shop' ),
+		'search_items'      => __( 'Search Codes', 'shop' ),
+		'all_items'         => __( 'All Codes', 'shop' ),
+		'parent_item'       => __( 'Parent Code', 'shop' ),
+		'parent_item_colon' => __( 'Parent Code:', 'shop' ),
+		'edit_item'         => __( 'Edit Code', 'shop' ),
+		'update_item'       => __( 'Update Code', 'shop' ),
+		'add_new_item'      => __( 'Add New Code', 'shop' ),
+		'new_item_name'     => __( 'New Code Name', 'shop' ),
+		'menu_name'         => __( 'Code', 'shop' ),
+	);
+	$args   = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'code', 'product', $args );
+}
+
+add_action( 'init', 'product_code_taxonomy' );
+
+/**
+ * Register a 'type' taxonomy for post type 'product', with a rewrite to match product CPT slug.
+ *
+ * @see register_post_type for registering post types.
+ */
+function product_type_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Types', 'taxonomy general name', 'shop' ),
+		'singular_name'     => _x( 'Type', 'taxonomy singular name', 'shop' ),
+		'search_items'      => __( 'Search Types', 'shop' ),
+		'all_items'         => __( 'All Types', 'shop' ),
+		'parent_item'       => __( 'Parent Type', 'shop' ),
+		'parent_item_colon' => __( 'Parent Type:', 'shop' ),
+		'edit_item'         => __( 'Edit Type', 'shop' ),
+		'update_item'       => __( 'Update Type', 'shop' ),
+		'add_new_item'      => __( 'Add New Type', 'shop' ),
+		'new_item_name'     => __( 'New Type Name', 'shop' ),
+		'menu_name'         => __( 'Type', 'shop' ),
+	);
+	$args   = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'type', 'product', $args );
+}
+
+add_action( 'init', 'product_type_taxonomy' );
+
+/**
+ * Register a 'price' taxonomy for post type 'product', with a rewrite to match product CPT slug.
+ *
+ * @see register_post_type for registering post types.
+ */
+function product_price_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Prices', 'taxonomy general name', 'shop' ),
+		'singular_name'     => _x( 'Price', 'taxonomy singular name', 'shop' ),
+		'search_items'      => __( 'Search Prices', 'shop' ),
+		'all_items'         => __( 'All Prices', 'shop' ),
+		'parent_item'       => __( 'Parent Price', 'shop' ),
+		'parent_item_colon' => __( 'Parent Price:', 'shop' ),
+		'edit_item'         => __( 'Edit Price', 'shop' ),
+		'update_item'       => __( 'Update Price', 'shop' ),
+		'add_new_item'      => __( 'Add New Price', 'shop' ),
+		'new_item_name'     => __( 'New Price Name', 'shop' ),
+		'menu_name'         => __( 'Price', 'shop' ),
+	);
+	$args   = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'price', 'product', $args );
+}
+
+add_action( 'init', 'product_price_taxonomy' );
+
+/**
+ * Register a 'brand' taxonomy for post type 'product', with a rewrite to match product CPT slug.
+ *
+ * @see register_post_type for registering post types.
+ */
+function product_brand_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Brands', 'taxonomy general name', 'shop' ),
+		'singular_name'     => _x( 'Brand', 'taxonomy singular name', 'shop' ),
+		'search_items'      => __( 'Search Brands', 'shop' ),
+		'all_items'         => __( 'All Brands', 'shop' ),
+		'parent_item'       => __( 'Parent Brand', 'shop' ),
+		'parent_item_colon' => __( 'Parent Brand:', 'shop' ),
+		'edit_item'         => __( 'Edit Brand', 'shop' ),
+		'update_item'       => __( 'Update Brand', 'shop' ),
+		'add_new_item'      => __( 'Add New Brand', 'shop' ),
+		'new_item_name'     => __( 'New Brand Name', 'shop' ),
+		'menu_name'         => __( 'Brand', 'shop' ),
+	);
+	$args   = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'brand', 'product', $args );
+}
+
+add_action( 'init', 'product_brand_taxonomy' );
+
+/**
+ * Register a 'model' taxonomy for post type 'product', with a rewrite to match product CPT slug.
+ *
+ * @see register_post_type for registering post types.
+ */
+function product_model_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Models', 'taxonomy general name', 'shop' ),
+		'singular_name'     => _x( 'Model', 'taxonomy singular name', 'shop' ),
+		'search_items'      => __( 'Search Models', 'shop' ),
+		'all_items'         => __( 'All Models', 'shop' ),
+		'parent_item'       => __( 'Parent Model', 'shop' ),
+		'parent_item_colon' => __( 'Parent Model:', 'shop' ),
+		'edit_item'         => __( 'Edit Model', 'shop' ),
+		'update_item'       => __( 'Update Model', 'shop' ),
+		'add_new_item'      => __( 'Add New Model', 'shop' ),
+		'new_item_name'     => __( 'New Model Name', 'shop' ),
+		'menu_name'         => __( 'Model', 'shop' ),
+	);
+	$args   = array(
+		'hierarchical'      => false,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'model', 'product', $args );
+}
+
+add_action( 'init', 'product_model_taxonomy' );
