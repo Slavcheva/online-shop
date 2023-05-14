@@ -15,4 +15,4 @@
 * Domain Path:       /languages
 */
 require 'cpt-products.php';
-//require 'functions.php';
+require 'functions.php';

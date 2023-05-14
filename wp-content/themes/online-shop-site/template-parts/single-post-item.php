@@ -1,6 +1,6 @@
 <li class="product-card">
     <div class="product-primary">
-        <h2 class="product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h1 class="product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
         <div class="product-meta">
             <span class="meta-category"><?php the_category(); ?></span>
             <span class="meta-content"><?php the_content(); ?></span>
