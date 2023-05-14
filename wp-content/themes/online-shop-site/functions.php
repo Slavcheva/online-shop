@@ -13,3 +13,17 @@ function shop_assets() {
 
 add_action( 'wp_enqueue_scripts', 'shop_assets' );
 
+
+/**
+ *   Function takes care of custom menu
+ *
+ * @return void
+ */
+function shop_register_nav_menu() {
+	register_nav_menus( array(
+		'primary_menu' => __( 'Primary Menu', 'shop' ),
+		'footer_menu'  => __( 'Footer Menu', 'shop' ),
+	) );
+}
+
+add_action( 'after_setup_theme', 'shop_register_nav_menu', 0 );

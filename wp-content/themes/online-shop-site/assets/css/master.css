@@ -364,6 +364,10 @@ body {
   line-height: 1.5;
 }
 
+ul {
+  list-style-type: none;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -372,6 +376,24 @@ a {
 .site-wrapper {
   max-width: 58em;
   margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between
+}
+
+.site-header ul {
+  display: flex;
+}
+
+.site-header ul li {
+  padding-left: 20px
+}
+
+.site-title {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
 .products-listing {
