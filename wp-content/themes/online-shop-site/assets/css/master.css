@@ -378,7 +378,8 @@ a {
   margin: 0;
   padding: 0;
 }
-.products-listing li {
+.products-listing li,
+.post-listing li{
   margin-bottom: 1em;
 }
 
@@ -532,7 +533,9 @@ a {
 .button-wide {
   width: 100%;
 }
-
+.meta-author{
+  margin-right: 5em;
+}
 @media (max-width: 960px) {
   .product-single {
     flex-direction: column;
